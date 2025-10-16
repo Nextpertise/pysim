@@ -1,3 +1,38 @@
+# Nextpertise sim batcher
+
+## Usage
+Place csv file in csv_files folder and run:
+```
+./run.sh --pin-auth 0 test_input.csv
+```
+
+To reset pin:
+```
+./run.sh --pin-auth 0 test_reset.csv
+```
+
+
+```
+./run.sh 
+usage: sim_batcher.py [-h] [-?] [--reader READER] [--default-old-pin DEFAULT_OLD_PIN] [--pin-auth {on,off,1,0}] [--quiet] [--debug] [csv]
+
+Strict SIM PIN batcher (ICCID,PIN_NEW,PIN_OLD[o]) — event-driven
+
+positional arguments:
+  csv                   Input CSV (ICCID,PIN_NEW,PIN_OLD[o])
+
+options:
+  -h, --help            show this help message and exit
+  -?                    show this help and exit
+  --reader READER       PC/SC reader index (default 0)
+  --default-old-pin DEFAULT_OLD_PIN
+                        Fallback PIN_OLD if empty (default 0000)
+  --pin-auth {on,off,1,0}
+                        Desired end state for PIN authentication (default: on)
+  --quiet               Reduce console output
+  --debug               Show APDU SW codes for debugging
+```
+
 pySim - Tools for reading, decoding, browsing SIM/USIM/ISIM/HPSIM/eUICC Cards
 =============================================================================
 
